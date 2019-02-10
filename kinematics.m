@@ -24,7 +24,7 @@ classdef kinematics < handle
         
         % Constructor
         %   DH parameters should be an nx4 matrix where
-        %   the columns are formatted as [theta, d, alpha, a]
+        %   the rows are formatted as [theta, d, alpha, a]
         function obj = kinematics(DH_params, joint_types) 
             
             % Initialize class variables
