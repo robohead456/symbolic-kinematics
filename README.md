@@ -1,7 +1,7 @@
 # Matlab Symbolic Kinematics
 
-The kinematics class takes a n*4 matrix of DH parameters with the rows formatted as [theta, d, alpha, a].
-It also takes a 1*n vector of joint types, where 0 is a revolute joint and 1 (or anything else) is a prismatic joint.
+The kinematics class takes a nx4 matrix of DH parameters with the rows formatted as [theta, d, alpha, a].
+It also takes a 1xn vector of joint types, where 0 is a revolute joint and 1 (or anything else) is a prismatic joint.
 
 ---
 
