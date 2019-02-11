@@ -72,6 +72,30 @@ classdef kinematics < handle
             end
         end
         
+        % Validate all transforms
+        function check_transforms(obj)
+            invalid = 0;
+            for i = 1:size(obj.Tij,2)
+                if(simplify(det(cell2sym(obj.Tij(i)))) ~= sym(1))
+                    fprintf("Tij(%d) invalid\n", i);
+                    disp(simplify(det(cell2sym(obj.Tij(i)))));
+                    invalid = invalid +1;
+                end
+            end
+            for i = 1:size(obj.T0i,2)
+                if(simplify(det(cell2sym(obj.T0i(i)))) ~= sym(1))
+                    fprintf("T0i(%d) invalid\n", i);
+                    disp(simplify(det(cell2sym(obj.T0i(i)))));
+                    invalid = invalid +1;
+                end
+            end
+            if(invalid ~= 0)
+                fprintf("%d inavalid transforms\n", invalid);
+            else
+                fprintf("All transforms valid\n");
+            end
+        end
+        
         % Display
         function disp_Tij(obj, index)
             fprintf("T%d%d =", index,index+1);
