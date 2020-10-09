@@ -66,8 +66,8 @@ classdef kinematics < handle
                 else % prismatic joint
                     T = obj.T0i{i};
                     zi = T(1:3, 3);
-                    obj.J(1:3,3) = zi;
-                    obj.J(4:6,3) = 0;
+                    obj.J(1:3,i) = zi;
+                    obj.J(4:6,i) = 0;
                 end
             end
         end
